@@ -32,7 +32,18 @@ const useStyles = makeStyles((theme) => ({
         },
         cart:{
             marginLeft : 'auto',
-            textAlign : 'center'
+            textAlign : 'center',
+            display: 'flex',
+            flexDirection: 'row-reverse',
+            alignItems: 'flex-end'
+        },
+        products: {
+            background : '#fff',
+            color : '#000',
+            borderRadius : '50px',
+            padding : '0px 5px',
+            fontSize : '11px',
+            fontWeight : '900'
         },
         modal: {
             position: 'absolute',
