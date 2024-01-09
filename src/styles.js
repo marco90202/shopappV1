@@ -58,10 +58,30 @@ const useStyles = makeStyles((theme) => ({
           li : {
             marginRight : '3rem',
             marginLeft : '1rem',
-            textAlign : 'center'
+            textAlign : 'center',
+            display : 'flex',
+            justifyContent : 'space-between',
+            alignItems : 'center'
+          },
+          p : {
+            width : '234px'
+    
           },
           button : {
-            paddingLeft : '1rem'
+            paddingLeft : '1rem',
+          },
+          butElim : {
+            height : '34px'
+          },
+          titleCenter : {
+            textAlign : 'center'
+          },
+          centerContent : {
+            display : 'flex',
+            justifyContent : 'center',
+          },
+          mt15 : {
+            marginTop : '15px',
           }
 
 }))
