@@ -122,14 +122,16 @@ const DetailsModal = ({
             <CheckCircleIcon></CheckCircleIcon>
           </div>
           <br></br>
-          <Button
-            variant="contained"
-            onClick={handleCloseConfirm}
-            size="small"
-            color="secondary"
-          >
-            cerrar
-          </Button>
+          <div className={classes.closeButon}>
+            <Button
+              variant="contained"
+              onClick={handleCloseConfirm}
+              size="small"
+              color="secondary"
+            >
+              cerrar
+            </Button>
+          </div>
         </div>
       </Modal>
     </Fragment>

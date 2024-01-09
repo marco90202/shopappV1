@@ -66,6 +66,10 @@ const useStyles = makeStyles((theme) => ({
           check : {
             paddingLeft : '3rem'
           },
+          closeButon : {
+            display : 'flex',
+            justifyContent : 'center'
+          },
           li : {
             marginRight : '3rem',
             marginLeft : '1rem',
