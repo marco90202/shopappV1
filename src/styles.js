@@ -97,6 +97,14 @@ const useStyles = makeStyles((theme) => ({
           },
           mt15 : {
             marginTop : '15px',
+          },
+          listContent : {
+            padding : '20px 15px',
+          },
+          listUser : {
+            display : 'flex',
+            justifyContent : 'space-between',
+            alignItems : 'center',
           }
 
 }))
