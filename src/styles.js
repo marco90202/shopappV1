@@ -103,9 +103,14 @@ const useStyles = makeStyles((theme) => ({
           },
           listUser : {
             display : 'flex',
-            justifyContent : 'space-between',
-            alignItems : 'center',
-          }
+            justifyContent : 'space-around',
+            alignItems : 'center'
+          },
+          contentFooter : {
+            display : 'flex',
+            justifyContent : 'space-evenly',
+            alignItems : 'center'
+          },
 
 }))
 
