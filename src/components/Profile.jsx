@@ -27,12 +27,13 @@ const Profile = ({ open, toggleOpen, toggleClose }) => {
       >
         <div className={classes.listContent}>
           <List component="nav">
-            <div className={classes.listUser}>
-              <p>usuario</p>
-              <ListItemIcon>
-                <AccountCircleIcon />
-              </ListItemIcon>
-            </div>
+            <ListItem button>
+            <ListItemIcon>
+              <AccountCircleIcon />
+            </ListItemIcon>
+            <ListItemText primary="Usuario" />
+            </ListItem>
+
             <Divider />
             <ListItem button>
               <ListItemIcon>
