@@ -5,6 +5,7 @@ import Dashboard from "./views/Dashboard";
 import NotFound from "./views/Notfound";
 import Signup from "./views/Signup";
 import Login from "./views/Login";
+import Home from "./components/Home";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard",
         element: <Dashboard />,
+      },
+      {
+        path: "/home",
+        element: <Home />,
       },
     ],
   },
