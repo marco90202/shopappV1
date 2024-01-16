@@ -14,7 +14,7 @@ import AssignmentIcon from "@material-ui/icons/Assignment";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import CloseIcon from "@material-ui/icons/Close";
 
-const Profile = ({ open, toggleOpen, toggleClose }) => {
+const Profile = ({ open, toggleOpen, toggleClose, user, onLogout }) => {
   const classes = useStyles();
 
   return (
@@ -28,10 +28,10 @@ const Profile = ({ open, toggleOpen, toggleClose }) => {
         <div className={classes.listContent}>
           <List component="nav">
             <ListItem button>
-            <ListItemIcon>
-              <AccountCircleIcon />
-            </ListItemIcon>
-            <ListItemText primary="Usuario" />
+              <ListItemIcon>
+                <AccountCircleIcon />
+              </ListItemIcon>
+              <ListItemText primary={user} />
             </ListItem>
 
             <Divider />
@@ -59,7 +59,7 @@ const Profile = ({ open, toggleOpen, toggleClose }) => {
               <ListItemIcon>
                 <CloseIcon />
               </ListItemIcon>
-              <ListItemText primary="Cerrar sesion" />
+              <ListItemText primary="Cerrar sesion" onClick={onLogout} />
             </ListItem>
 
             <Divider />

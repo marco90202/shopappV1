@@ -10,7 +10,7 @@ import Home from "./components/Home";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <DefaultLayout Navigate />,
+    element: <DefaultLayout />,
     children: [
       {
         path: "/",

@@ -21,6 +21,8 @@ const Header = ({
   suma,
   sumTotal,
   carritoLength,
+  user,
+  onLogout,
 }) => {
   const classes = useStyles();
 
@@ -83,6 +85,8 @@ const Header = ({
           open={openProfile}
           toggleOpen={toggleOpenProfile}
           toggleClose={toggleCloseProfile}
+          user={user}
+          onLogout={onLogout}
         />
       ) : null}
     </Fragment>

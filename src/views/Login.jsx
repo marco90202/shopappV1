@@ -24,11 +24,13 @@ export default function Login() {
       .catch((err) => {
         const response = err.response;
         if (response && response.status === 422) {
-          setErrors(response.data.errors);
-        } else {
-          setErrors({
-            email: [response.data.message],
-          });
+          if (response.data.errors) {
+            setErrors(response.data.errors);
+          } else {
+            setErrors({
+              email: [response.data.message],
+            });
+          }
         }
       });
   };

@@ -3,7 +3,7 @@ import Header from "./Header";
 import ProductList from "./ProductList";
 import Footer from "./Footer";
 
-const Home = () => {
+const Home = ({ user, onLogout }) => {
   const data = {
     cart: [],
   };
@@ -49,6 +49,8 @@ const Home = () => {
         suma={suma}
         sumTotal={sumTotal}
         carritoLength={carritoLength}
+        user={user}
+        onLogout={onLogout}
       ></Header>
       <ProductList shopCart={shopCart} addToCart={addToCart}></ProductList>
       <Footer></Footer>
