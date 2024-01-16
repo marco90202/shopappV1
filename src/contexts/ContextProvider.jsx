@@ -5,9 +5,18 @@ const StateContext = createContext({
   token: null,
   setUser: () => {},
   setToken: () => {},
+  shopCart:null,
+  setShopCart: () => {},
+  suma:null,
+  setSuma: () => {}
 });
 
 export const ContextProvider = ({ children }) => {
+  const data = {
+    cart: [],
+  };
+  const [shopCart, setShopCart] = useState(data);
+  const [suma, setSuma] = useState(0);
   const [user, setUser] = useState({});
   const [token, _setToken] = useState(localStorage.getItem("ACCESS_TOKEN"));
 
@@ -27,6 +36,10 @@ export const ContextProvider = ({ children }) => {
         token,
         setUser,
         setToken,
+        shopCart,
+        setShopCart,
+        suma,
+        setSuma,
       }}
     >
       {children}

@@ -6,6 +6,8 @@ import NotFound from "./views/Notfound";
 import Signup from "./views/Signup";
 import Login from "./views/Login";
 import Home from "./components/Home";
+import Wishlist from "./components/Wishlist";
+import ProductList from "./components/ProductList";
 
 const router = createBrowserRouter([
   {
@@ -14,15 +16,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Navigate to="/dashboard" />,
-      },
-      {
-        path: "/dashboard",
-        element: <Dashboard />,
-      },
-      {
-        path: "/home",
         element: <Home />,
+      },
+      {
+        path: "/wishlist",
+        element: <Wishlist />,
       },
     ],
   },

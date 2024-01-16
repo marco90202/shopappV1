@@ -1,11 +1,18 @@
-import { useEffect } from "react";
-import { Link, Navigate, Outlet } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Navigate, Outlet } from "react-router-dom";
 import { useStateContext } from "../contexts/ContextProvider";
 import axiosClient from "../utils/axios-client";
-import Home from "../components/Home";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 export default function DefaultLayout() {
-  const { user, token, setUser, setToken } = useStateContext();
+  // const data = {
+  //   cart: [],
+  // };
+  // const [shopCart, setShopCart] = useState(data);
+  // const [suma, setSuma] = useState(0);
+  const { user, token, setUser, setToken, shopCart, setShopCart, suma, setSuma } = useStateContext();
+
   useEffect(() => {
     axiosClient.get("/user").then(({ data }) => {
       setUser(data);
@@ -23,29 +30,49 @@ export default function DefaultLayout() {
     });
   };
 
+
+
+  let carritoLength = shopCart.cart.length;
+  const sumTotal = (shopCart) => {
+    let total = 0;
+    if (carritoLength > 0) {
+      shopCart.cart.map((row, index) => (total = total + +row.product.price));
+    }
+    setSuma(total);
+  };
+
+  const restarTotal = (name) => {
+    let newCart = {
+      cart: shopCart.cart.filter((row) => row.product.title !== name),
+    };
+    setShopCart(newCart);
+    sumTotal(newCart);
+  };
+
+  const borrarCarrito = () => {
+    let emptyCart = {
+      cart: [],
+    };
+    setShopCart(emptyCart);
+    setSuma(0);
+  };
+
   return (
-    <>
-      <Home user={user.name} onLogout={onLogout} />
-    </>
-    // <div id="defaultLayout">
-    //   <aside>
-    //     <Link to="/dashboard">Dashboard</Link>
-    //     <Link to="/home">Home</Link>
-    //   </aside>
-    //   <div className="content">
-    //     <header>
-    //       <div>Header</div>
-    //       <div>
-    //         {user.name}
-    //         <a href="#" className="btn-logout" onClick={onLogout}>
-    //           Logout
-    //         </a>
-    //       </div>
-    //     </header>
-    //     <main>
-    //       <Outlet />
-    //     </main>
-    //   </div>
-    // </div>
+    <div>
+      <Header
+        shopCart={shopCart}
+        restarTotal={restarTotal}
+        borrarCarrito={borrarCarrito}
+        suma={suma}
+        sumTotal={sumTotal}
+        carritoLength={carritoLength}
+        user={user.name}
+        onLogout={onLogout}
+      />
+      <main>
+        <Outlet />
+      </main>
+      <Footer/>
+    </div>
   );
 }

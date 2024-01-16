@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import useStyles from "../styles";
 import {
@@ -8,11 +9,11 @@ import {
   ListItemText,
   Divider,
 } from "@material-ui/core";
-
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import AssignmentIcon from "@material-ui/icons/Assignment";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import CloseIcon from "@material-ui/icons/Close";
+import HomeIcon from '@material-ui/icons/Home';
 
 const Profile = ({ open, toggleOpen, toggleClose, user, onLogout }) => {
   const classes = useStyles();
@@ -37,9 +38,18 @@ const Profile = ({ open, toggleOpen, toggleClose, user, onLogout }) => {
             <Divider />
             <ListItem button>
               <ListItemIcon>
+                <HomeIcon />
+              </ListItemIcon>
+              <Link to="/"><ListItemText primary="Inicio" /></Link>
+              
+            </ListItem>
+
+            <ListItem button>
+              <ListItemIcon>
                 <FavoriteBorderIcon />
               </ListItemIcon>
-              <ListItemText primary="Lista de deseos" />
+              <Link to="/wishlist"><ListItemText primary="Lista de deseos" /></Link>
+              
             </ListItem>
 
             <ListItem button>
