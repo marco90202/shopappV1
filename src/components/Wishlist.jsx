@@ -2,6 +2,8 @@ import React from "react";
 import useStyles from "../styles";
 import { Container, Typography } from "@material-ui/core";
 
+import FavoriteIcon from "@material-ui/icons/Favorite";
+
 const Wishlist = () => {
   const classes = useStyles();
 
@@ -28,7 +30,25 @@ const Wishlist = () => {
           </Typography>
         </Container>
       </div>
-      <Container className={classes.cardGrid} maxWidth="md">lista de deseos</Container>
+      <Container className={classes.cardGrid} maxWidth="md">
+        lista de deseos
+      </Container>
+      <div className={classes.contentBody}>
+        <div className={classes.contentCard}>
+          <div classname={classes.bodyCard}>
+            <FavoriteIcon
+              style={{ color: "red", margin: "30px" }}
+            ></FavoriteIcon>
+            <div></div>
+          </div>
+          <div classname={classes.bodyCard}>
+            <FavoriteIcon
+              style={{ color: "red", margin: "30px" }}
+            ></FavoriteIcon>
+            
+          </div>
+        </div>
+      </div>
     </>
   );
 };
