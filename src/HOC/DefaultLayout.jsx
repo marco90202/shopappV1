@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState,useEffect } from "react";
 import { Navigate, Outlet } from "react-router-dom";
 import { useStateContext } from "../contexts/ContextProvider";
 import axiosClient from "../utils/axios-client";
@@ -6,18 +6,18 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 export default function DefaultLayout() {
-  // const data = {
-  //   cart: [],
-  // };
-  // const [shopCart, setShopCart] = useState(data);
-  // const [suma, setSuma] = useState(0);
+  const [loading, setLoading] = useState(false);
   const { user, token, setUser, setToken, shopCart, setShopCart, suma, setSuma } = useStateContext();
 
   useEffect(() => {
-    axiosClient.get("/user").then(({ data }) => {
-      setUser(data);
-    });
-  }, []);
+    if(!loading){
+      axiosClient.get("/user").then(({ data }) => {
+        setUser(data);
+      });
+    }
+    setLoading(true);
+  }, [user]);
+
   if (!token) {
     return <Navigate to="/login" />;
   }

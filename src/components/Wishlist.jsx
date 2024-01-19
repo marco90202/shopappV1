@@ -1,9 +1,29 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import useStyles from "../styles";
 import { Container, Typography } from "@material-ui/core";
+import axiosClient from "../utils/axios-client";
 
 const Wishlist = () => {
+  const [wishlist, setWishlist] = useState([]);
+  const [loading, setLoading] = useState(false);
   const classes = useStyles();
+
+  useEffect(() => {
+    if(!loading){
+      getWishlist()
+    };
+    setLoading(true)
+  },[]);
+
+  const getWishlist = () => {
+    setLoading(true);
+    axiosClient.get('/users').then(({data}) => {
+        setLoading(false);
+        console.log(data);
+    }).catch(() => {
+        setLoading(false);
+    })
+  }
 
   return (
     <>
