@@ -1,7 +1,16 @@
+<<<<<<< HEAD
 import React,{useState,useEffect} from "react";
 import useStyles from "../styles";
 import { Container, Typography } from "@material-ui/core";
 import axiosClient from "../utils/axios-client";
+=======
+import React from "react";
+
+import useStyles from "../styles";
+import { Container, Grid, Typography, Divider } from "@material-ui/core";
+import Button from "@material-ui/core/Button";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+>>>>>>> 53e72a00c4c83bf82c6adcdbcaffcabf19089e57
 
 import FavoriteIcon from "@material-ui/icons/Favorite";
 
@@ -51,24 +60,29 @@ const Wishlist = () => {
         </Container>
       </div>
       <Container className={classes.cardGrid} maxWidth="md">
-        lista de deseos
-      </Container>
-      <div className={classes.contentBody}>
-        <div className={classes.contentCard}>
-          <div classname={classes.bodyCard}>
-            <FavoriteIcon
-              style={{ color: "red", margin: "30px" }}
-            ></FavoriteIcon>
-            <div></div>
-          </div>
-          <div classname={classes.bodyCard}>
-            <FavoriteIcon
-              style={{ color: "red", margin: "30px" }}
-            ></FavoriteIcon>
-            
-          </div>
+        <div className={classes.contentBody}>
+          <Grid container spacing={4}>
+            <Grid className="contentCard " item xs={12} sm={6} md={3}>
+              <div className="contentImage">
+                <FavoriteIcon
+                  style={{ color: "red", margin: "25px 5px" }}
+                ></FavoriteIcon>
+                <div className={classes.imgCard}></div>
+                <Typography variant="h6">Heavy Burden</Typography>
+              </div>
+              <Divider style={{ height: "3px" }} />
+              <div className="contentBottom">
+                <Typography align="center" variant="h6">
+                  41,26 PEN
+                </Typography>
+                <Button variant="contained" size="small" color="primary">
+                  Agregar al carrito <ShoppingCartIcon />
+                </Button>
+              </div>
+            </Grid>
+          </Grid>
         </div>
-      </div>
+      </Container>
     </>
   );
 };

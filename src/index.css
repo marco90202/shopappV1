@@ -242,3 +242,21 @@ table > tbody > tr > td {
         transform: translateY(0);
     }
 }
+.contentCard {
+    background-color: green;
+}
+
+.contentImage {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.contentBottom {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 10px;
+}
