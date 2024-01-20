@@ -5,7 +5,6 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(8, 0, 6),
     paddingTop: "4.5rem",
-    
   },
   dpad: {
     marginRight: "20px",
@@ -118,35 +117,31 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "space-evenly",
     alignItems: "center",
-    
   },
-  background: {
-    backgroundColor: "#5b08a7",
-  },
-
+  
   contentBody: {
-    backgroundColor: "#3f51b5",
+   
     width: "100%",
-    height: "100vh",
-    display: "flex",
-    // flexDirection: "row",
-    // justifyContent: "center",
-    paddingTop: "35px",
+    color: "#fff",
+    padding: "20px",
   },
 
   contentCard: {
-    width: "80%",
+    display: "flex",
     
-  
-   },
+    
+    backgroundColor: "green",
+  },
 
-  bodyCard: {
-    backgroundColor: "red",
-    width: "75%",
-    height: "20%",
-   
-    
-  }
+  imgCard: {
+    width: "184px",
+    height: "70px",
+    border: "1px solid #000",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundImage:
+      "url(https://cdn.cloudflare.steamstatic.com/steam/apps/2070000/capsule_sm_120.jpg?t=1704865963)",
+  },
 }));
 
 export default useStyles;
