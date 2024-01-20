@@ -1,17 +1,9 @@
-<<<<<<< HEAD
 import React,{useState,useEffect} from "react";
 import useStyles from "../styles";
-import { Container, Typography } from "@material-ui/core";
 import axiosClient from "../utils/axios-client";
-=======
-import React from "react";
-
-import useStyles from "../styles";
 import { Container, Grid, Typography, Divider } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
->>>>>>> 53e72a00c4c83bf82c6adcdbcaffcabf19089e57
-
 import FavoriteIcon from "@material-ui/icons/Favorite";
 
 const Wishlist = () => {
