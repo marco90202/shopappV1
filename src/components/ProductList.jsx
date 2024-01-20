@@ -79,7 +79,7 @@ const ProductList = ({shopCart, addToCart}) => {
                             </Typography>
                         </Container>
                     </div>
-                    <Container className={classes.cardGrid} maxWidth="md">
+                    <Container maxWidth="md">
                         <Grid container spacing={4}>
                             {scope.data !== null ? scope.data.map((row,index) => 
                                             <Grid item key={index} xs={12} sm={6} md={3}>

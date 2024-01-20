@@ -3,6 +3,8 @@ import useStyles from "../styles";
 import { Container, Typography } from "@material-ui/core";
 import axiosClient from "../utils/axios-client";
 
+import FavoriteIcon from "@material-ui/icons/Favorite";
+
 const Wishlist = () => {
   const [wishlist, setWishlist] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -48,7 +50,25 @@ const Wishlist = () => {
           </Typography>
         </Container>
       </div>
-      <Container className={classes.cardGrid} maxWidth="md">lista de deseos</Container>
+      <Container className={classes.cardGrid} maxWidth="md">
+        lista de deseos
+      </Container>
+      <div className={classes.contentBody}>
+        <div className={classes.contentCard}>
+          <div classname={classes.bodyCard}>
+            <FavoriteIcon
+              style={{ color: "red", margin: "30px" }}
+            ></FavoriteIcon>
+            <div></div>
+          </div>
+          <div classname={classes.bodyCard}>
+            <FavoriteIcon
+              style={{ color: "red", margin: "30px" }}
+            ></FavoriteIcon>
+            
+          </div>
+        </div>
+      </div>
     </>
   );
 };

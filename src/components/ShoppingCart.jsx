@@ -35,7 +35,7 @@ const ShoppingCart = ({
             Borrar Carrito{" "}
           </Button>
         </Typography>
-        <ul>
+        <ul className={classes.ul}>
           {shopCart.cart.length !== 0 ? (
             shopCart.cart.map((row, index) => (
               <p className={classes.li} key={index}>

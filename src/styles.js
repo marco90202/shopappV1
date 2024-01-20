@@ -5,6 +5,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(8, 0, 6),
     paddingTop: "4.5rem",
+    
   },
   dpad: {
     marginRight: "20px",
@@ -12,17 +13,17 @@ const useStyles = makeStyles((theme) => ({
   buttons: {
     marginTop: "40px",
   },
-  cardGrid: {
-    padding: "20px 0",
-  },
+  // cardGrid: {
+  //   padding: "20px 0",
+  // },
   card: {
     height: "100%",
     display: "flex",
     flexDirection: "column",
   },
   cardMedia: {
-    width:'216px',
-    height:'80px'
+    paddingTop: "56.25%",
+    backgroundSize: "contain",
   },
   cardContent: {
     flexGrow: 1,
@@ -30,6 +31,7 @@ const useStyles = makeStyles((theme) => ({
   progress: {
     marginLeft: "auto",
     marginRight: "auto",
+    paddingTop: "25px",
   },
   cart: {
     marginLeft: "auto",
@@ -71,6 +73,11 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
   },
+
+  ul: {
+    marginTop: "25px",
+  },
+
   li: {
     marginRight: "3rem",
     marginLeft: "1rem",
@@ -78,6 +85,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
+    margin: "25px 0px",
   },
   p: {
     width: "234px",
@@ -110,10 +118,35 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "space-evenly",
     alignItems: "center",
+    
   },
   background: {
     backgroundColor: "#5b08a7",
   },
+
+  contentBody: {
+    backgroundColor: "#3f51b5",
+    width: "100%",
+    height: "100vh",
+    display: "flex",
+    // flexDirection: "row",
+    // justifyContent: "center",
+    paddingTop: "35px",
+  },
+
+  contentCard: {
+    width: "80%",
+    
+  
+   },
+
+  bodyCard: {
+    backgroundColor: "red",
+    width: "75%",
+    height: "20%",
+   
+    
+  }
 }));
 
 export default useStyles;
