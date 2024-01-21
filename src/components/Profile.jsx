@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import useStyles from "../styles";
 import {
@@ -13,7 +13,7 @@ import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import AssignmentIcon from "@material-ui/icons/Assignment";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import CloseIcon from "@material-ui/icons/Close";
-import HomeIcon from '@material-ui/icons/Home';
+import HomeIcon from "@material-ui/icons/Home";
 
 const Profile = ({ open, toggleOpen, toggleClose, user, onLogout }) => {
   const classes = useStyles();
@@ -36,42 +36,42 @@ const Profile = ({ open, toggleOpen, toggleClose, user, onLogout }) => {
             </ListItem>
 
             <Divider />
-            <ListItem button>
-              <ListItemIcon>
-                <HomeIcon />
-              </ListItemIcon>
-              <Link to="/"><ListItemText primary="Inicio" /></Link>
-              
-            </ListItem>
-
-            <ListItem button>
-              <ListItemIcon>
-                <FavoriteBorderIcon />
-              </ListItemIcon>
-              <Link to="/wishlist"><ListItemText primary="Lista de deseos" /></Link>
-              
-            </ListItem>
-
+            <Link to="/">
+              <ListItem button>
+                <ListItemIcon>
+                  <HomeIcon />
+                </ListItemIcon>
+                <ListItemText primary="Inicio" />
+              </ListItem>
+            </Link>
+            <Link to="/wishlist">
+              <ListItem button>
+                <ListItemIcon>
+                  <FavoriteBorderIcon />
+                </ListItemIcon>
+                <ListItemText primary="Lista de deseos" />
+              </ListItem>
+            </Link>
             <ListItem button>
               <ListItemIcon>
                 <AssignmentIcon />
               </ListItemIcon>
               <ListItemText primary="Mis pedidos" />
             </ListItem>
-
-            <ListItem button>
-              <ListItemIcon>
-                <AccountCircleIcon />
-              </ListItemIcon>
-              <ListItemText primary="Mi cuenta" />
-            </ListItem>
-            <ListItem button>
+            <Link to="/account">
+              <ListItem button>
+                <ListItemIcon>
+                  <AccountCircleIcon />
+                </ListItemIcon>
+                <ListItemText primary="Mi cuenta" />
+              </ListItem>
+            </Link>
+            <ListItem button onClick={onLogout}>
               <ListItemIcon>
                 <CloseIcon />
               </ListItemIcon>
-              <ListItemText primary="Cerrar sesion" onClick={onLogout} />
+              <ListItemText primary="Cerrar sesion" />
             </ListItem>
-
             <Divider />
           </List>
         </div>

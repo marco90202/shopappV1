@@ -6,6 +6,7 @@ import Signup from "./views/Signup";
 import Login from "./views/Login";
 import Home from "./components/Home";
 import Wishlist from "./components/Wishlist";
+import Account from "./components/Account";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
       {
         path: "/wishlist",
         element: <Wishlist />,
+      },
+      {
+        path: "/account",
+        element: <Account />,
       },
     ],
   },
