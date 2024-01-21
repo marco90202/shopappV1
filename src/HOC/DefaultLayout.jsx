@@ -27,6 +27,7 @@ export default function DefaultLayout() {
     axiosClient.post("/logout").then(() => {
       setUser({});
       setToken(null);
+      localStorage.removeItem("user_id");
     });
   };
 

@@ -245,7 +245,8 @@ table > tbody > tr > td {
 }
 
 .contentCard {
-    background-color: #263241;
+    background-color: #3F51B1;
+    border-radius: 4px;
 }
 @media(min-width: 540px){
     .contentCard {
@@ -284,4 +285,11 @@ table > tbody > tr > td {
         flex-direction: column;
         gap: 10px;
     } 
+}
+
+.wishlistIcon:hover{
+    cursor: pointer;
+    transition: 0.1ms;
+    width: 27px;
+    height: 27px;
 }

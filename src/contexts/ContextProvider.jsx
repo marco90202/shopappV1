@@ -5,10 +5,12 @@ const StateContext = createContext({
   token: null,
   setUser: () => {},
   setToken: () => {},
-  shopCart:null,
+  shopCart: null,
   setShopCart: () => {},
-  suma:null,
-  setSuma: () => {}
+  suma: null,
+  setSuma: () => {},
+  wishlisted: [],
+  setWishlisted: () => {},
 });
 
 export const ContextProvider = ({ children }) => {
@@ -16,10 +18,10 @@ export const ContextProvider = ({ children }) => {
     cart: [],
   };
   const [shopCart, setShopCart] = useState(data);
+  const [wishlisted, setWishlisted] = useState([]);
   const [suma, setSuma] = useState(0);
   const [user, setUser] = useState({});
   const [token, _setToken] = useState(localStorage.getItem("ACCESS_TOKEN"));
-
   const setToken = (token) => {
     _setToken(token);
     if (token) {
@@ -40,6 +42,8 @@ export const ContextProvider = ({ children }) => {
         setShopCart,
         suma,
         setSuma,
+        wishlisted,
+        setWishlisted,
       }}
     >
       {children}
