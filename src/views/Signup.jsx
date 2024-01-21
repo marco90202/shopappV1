@@ -24,6 +24,7 @@ export default function Signup() {
       .then(({ data }) => {
         setToken(data.token);
         setUser(data.user);
+        localStorage.setItem("user_id", data.user.id);
       })
       .catch((err) => {
         const response = err.response;

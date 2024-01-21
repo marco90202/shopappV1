@@ -1,4 +1,5 @@
 import React, { Fragment, useState, useEffect } from "react";
+import { useStateContext } from "../contexts/ContextProvider";
 import axiosClient from "../utils/axios-client";
 import DetailsModal from "./DetailsModal";
 import {
@@ -18,6 +19,7 @@ import useStyles from "../styles";
 
 const ProductList = ({ user_id, shopCart, addToCart }) => {
   const classes = useStyles();
+  const { wishlisted, setWishlisted } = useStateContext();
   const object = {
     data: null,
     loader: true,
@@ -27,7 +29,6 @@ const ProductList = ({ user_id, shopCart, addToCart }) => {
   const [scope, setScope] = useState(object);
   const [productDetail, setProductDetailt] = useState();
   const [wishlist, setWishlist] = useState(null);
-  const [wishlisted, setWishlisted] = useState([]);
   const [open, setOpen] = useState(false);
   const handleOpen = () => {
     setOpen(true);
@@ -36,9 +37,6 @@ const ProductList = ({ user_id, shopCart, addToCart }) => {
   const handleClose = () => {
     setOpen(false);
   };
-
-
-
   useEffect(() => {
     if (scope.data && wishlist) isWishListed();
     if (!scope.loader) return;
@@ -68,9 +66,9 @@ const ProductList = ({ user_id, shopCart, addToCart }) => {
 
   const getWishlist = () => {
     axiosClient
-      .get("/wishlists")
-      .then(({ data }) => {
-        setWishlist(data.data);
+      .get(`/wishlists/${user_id}`)
+      .then((response) => {
+        setWishlist(response.data);
       })
       .catch((error) => {
         console.log(error);
@@ -97,6 +95,7 @@ const ProductList = ({ user_id, shopCart, addToCart }) => {
     };
     addToCart(cartProduct);
   };
+
   const addWishList = (user_id, product_id) => {
     const payload = {
       user_id: user_id,
@@ -115,10 +114,8 @@ const ProductList = ({ user_id, shopCart, addToCart }) => {
       });
   };
 
-  const deleteWishList = (user_id, product_id) => {
-    let response = wishlist.find(
-      (value) => value.user_id === user_id && value.product_id === product_id
-    );
+  const deleteWishList = (product_id) => {
+    let response = wishlist.find((value) => value.product_id === product_id);
     axiosClient
       .delete(`/wishlists/${response.id}`)
       .then(({ data }) => {
@@ -158,7 +155,7 @@ const ProductList = ({ user_id, shopCart, addToCart }) => {
         </div>
         <Container maxWidth="md">
           <Grid container spacing={4}>
-            {scope.data !== null ? (
+            {wishlisted.length > 0 && scope.data !== null ? (
               scope.data.map((row, index) => (
                 <Grid item key={index} xs={12} sm={6} md={3}>
                   <Card className={classes.card}>
@@ -180,18 +177,21 @@ const ProductList = ({ user_id, shopCart, addToCart }) => {
                           ? "Juego sin ofertas"
                           : "Oferta : $" + row.salePrice}
                       </Typography>
-                      {wishlisted.length > 0 &&
-                      wishlisted[index]?.product_id ? (
-                        <FavoriteIcon
-                          key={index}
-                          onClick={() => deleteWishList(user_id, row.id)}
-                          style={{ color: "red" }}
-                        />
-                      ) : (
-                        <FavoriteBorderOutlinedIcon
-                          onClick={() => addWishList(user_id, row.id)}
-                        />
-                      )}
+                      <div style={{ height: "10px" }}>
+                        {wishlisted[index]?.product_id ? (
+                          <FavoriteIcon
+                            className="wishlistIcon"
+                            key={index}
+                            onClick={() => deleteWishList(row.id)}
+                            style={{ color: "red" }}
+                          />
+                        ) : (
+                          <FavoriteBorderOutlinedIcon
+                            className="wishlistIcon"
+                            onClick={() => addWishList(user_id, row.id)}
+                          />
+                        )}
+                      </div>
                     </CardContent>
                     <CardActions>
                       <Button

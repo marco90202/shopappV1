@@ -1,22 +1,23 @@
-import React, {  Fragment } from "react";
+import React, { Fragment } from "react";
 import { useStateContext } from "../contexts/ContextProvider";
 import ProductList from "./ProductList";
 
-
 const Home = () => {
-
-
-  const { user, shopCart, setShopCart } = useStateContext();
-
+  const { shopCart, setShopCart } = useStateContext();
 
   const addToCart = (product) => {
     setShopCart({ ...shopCart, cart: [...shopCart.cart, { product }] });
   };
-
+  let storedUser = localStorage.getItem("user_id");
   return (
     <Fragment>
-     
-      <ProductList user_id={user.id} shopCart={shopCart} addToCart={addToCart}/>
+      {storedUser !== null && (
+        <ProductList
+          user_id={storedUser}
+          shopCart={shopCart}
+          addToCart={addToCart}
+        />
+      )}
     </Fragment>
   );
 };

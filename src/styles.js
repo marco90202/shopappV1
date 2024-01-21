@@ -137,10 +137,10 @@ const useStyles = makeStyles((theme) => ({
     width: "184px",
     height: "64px",
     border: "1px solid #000",
-    backgroundSize: "cover",
-    backgroundRepeat: "no-repeat",
-    backgroundImage:
-      "url(https://cdn.cloudflare.steamstatic.com/steam/apps/2070000/capsule_sm_120.jpg?t=1704865963)",
+    // backgroundSize: "cover",
+    // backgroundRepeat: "no-repeat",
+    // backgroundImage:
+    //   "url(https://cdn.cloudflare.steamstatic.com/steam/apps/2070000/capsule_sm_120.jpg?t=1704865963)",
   },
 }));
 
