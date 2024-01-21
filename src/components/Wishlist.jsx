@@ -156,46 +156,6 @@ const Wishlist = () => {
                 )
             )}
           </Grid>
-          <Grid container spacing={4}>
-            <Grid className="contentCard " item xs={12} sm={12} md={12}>
-              <div className="contentImage">
-                <FavoriteIcon
-                  style={{ color: "red", margin: "25px 5px" }}
-                ></FavoriteIcon>
-                <div className={classes.imgCard}></div>
-                <Typography variant="h6">Heavy Burden</Typography>
-              </div>
-              <Divider style={{ height: "3px" }} />
-              <div className="contentBottom">
-                <Typography align="center" variant="h6">
-                  41,26 PEN
-                </Typography>
-                <Button variant="contained" size="small" color="primary">
-                  Agregar al carrito <ShoppingCartIcon />
-                </Button>
-              </div>
-            </Grid>
-          </Grid>
-          <Grid container spacing={4}>
-            <Grid className="contentCard " item xs={12} sm={12} md={12}>
-              <div className="contentImage">
-                <FavoriteIcon
-                  style={{ color: "red", margin: "25px 5px" }}
-                ></FavoriteIcon>
-                <div className={classes.imgCard}></div>
-                <Typography variant="h6">Heavy Burden</Typography>
-              </div>
-              <Divider style={{ height: "3px" }} />
-              <div className="contentBottom">
-                <Typography align="center" variant="h6">
-                  41,26 PEN
-                </Typography>
-                <Button variant="contained" size="small" color="primary">
-                  Agregar al carrito <ShoppingCartIcon />
-                </Button>
-              </div>
-            </Grid>
-          </Grid>
         </div>
       </Container>
     </>
