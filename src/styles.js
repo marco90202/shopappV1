@@ -130,7 +130,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     
     
-    backgroundColor: "green",
+    backgroundColor: "#263241",
   },
 
   imgCard: {
