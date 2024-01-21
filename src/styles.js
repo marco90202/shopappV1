@@ -124,13 +124,12 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     color: "#fff",
     padding: "20px",
+    minHeight: "100vh",
+    gap: "10px",
   },
 
   contentCard: {
     display: "flex",
-    
-    
-    backgroundColor: "#263241",
   },
 
   imgCard: {

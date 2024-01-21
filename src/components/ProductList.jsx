@@ -37,8 +37,6 @@ const ProductList = ({ user_id, shopCart, addToCart }) => {
     setOpen(false);
   };
 
-
-
   useEffect(() => {
     if (scope.data && wishlist) isWishListed();
     if (!scope.loader) return;
@@ -156,7 +154,7 @@ const ProductList = ({ user_id, shopCart, addToCart }) => {
             </Typography>
           </Container>
         </div>
-        <Container maxWidth="md">
+        <Container className={classes.contentBody} maxWidth="md">
           <Grid container spacing={4}>
             {scope.data !== null ? (
               scope.data.map((row, index) => (
