@@ -38,7 +38,7 @@ const ShoppingCart = ({
         <ul className={classes.ul}>
           {shopCart.cart.length !== 0 ? (
             shopCart.cart.map((row, index) => (
-              <p className={classes.li} key={index}>
+              <div className={classes.li} key={index}>
                 <p className={classes.p}>
                   {row.product.title + " - $ " + row.product.price}{" "}
                 </p>
@@ -52,7 +52,7 @@ const ShoppingCart = ({
                   {" "}
                   Eliminar{" "}
                 </Button>{" "}
-              </p>
+              </div>
             ))
           ) : (
             <p className={classes.li}>No hay juegos agregados</p>

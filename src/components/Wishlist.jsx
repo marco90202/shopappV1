@@ -7,7 +7,7 @@ import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 
 const Wishlist = () => {
-  const [wishlist, setWishlist] = useState([]);
+  // const [wishlist, setWishlist] = useState([]);
   const [loading, setLoading] = useState(false);
   const classes = useStyles();
 
@@ -16,7 +16,7 @@ const Wishlist = () => {
       getWishlist()
     };
     setLoading(true)
-  },[]);
+  },[loading]);
 
   const getWishlist = () => {
     setLoading(true);

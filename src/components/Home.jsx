@@ -6,7 +6,7 @@ import ProductList from "./ProductList";
 const Home = () => {
 
 
-  const { shopCart, setShopCart } = useStateContext();
+  const { user, shopCart, setShopCart } = useStateContext();
 
 
   const addToCart = (product) => {
@@ -16,7 +16,7 @@ const Home = () => {
   return (
     <Fragment>
      
-      <ProductList shopCart={shopCart} addToCart={addToCart}/>
+      <ProductList user_id={user.id} shopCart={shopCart} addToCart={addToCart}/>
     </Fragment>
   );
 };
