@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import useStyles from "../styles";
 import axiosClient from "../utils/axios-client";
 import { Container, Grid, Typography, Divider } from "@material-ui/core";
@@ -12,21 +12,24 @@ const Wishlist = () => {
   const classes = useStyles();
 
   useEffect(() => {
-    if(!loading){
-      getWishlist()
-    };
-    setLoading(true)
-  },[]);
+    if (!loading) {
+      getWishlist();
+    }
+    setLoading(true);
+  }, []);
 
   const getWishlist = () => {
     setLoading(true);
-    axiosClient.get('/users').then(({data}) => {
+    axiosClient
+      .get("/users")
+      .then(({ data }) => {
         setLoading(false);
         console.log(data);
-    }).catch(() => {
+      })
+      .catch(() => {
         setLoading(false);
-    })
-  }
+      });
+  };
 
   return (
     <>
@@ -54,7 +57,7 @@ const Wishlist = () => {
       <Container className={classes.cardGrid} maxWidth="md">
         <div className={classes.contentBody}>
           <Grid container spacing={4}>
-            <Grid className="contentCard " item xs={12} sm={6} md={3}>
+            <Grid className="contentCard " item xs={12} sm={12} md={12}>
               <div className="contentImage">
                 <FavoriteIcon
                   style={{ color: "red", margin: "25px 5px" }}

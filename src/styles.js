@@ -135,7 +135,7 @@ const useStyles = makeStyles((theme) => ({
 
   imgCard: {
     width: "184px",
-    height: "70px",
+    height: "64px",
     border: "1px solid #000",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",

@@ -245,6 +245,13 @@ table > tbody > tr > td {
 .contentCard {
     background-color: green;
 }
+@media(min-width: 540px){
+    .contentCard {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    } 
+}
 
 .contentImage {
     display: flex;
@@ -254,9 +261,25 @@ table > tbody > tr > td {
     padding-bottom: 10px;
 }
 
+/* .imgCard {
+    width: 100%;
+} */
+/* @media(min-width: 540px){
+    .imgCard {
+        width: 150px;
+    } 
+} */
+
 .contentBottom {
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding-top: 10px;
+}
+
+@media(min-width: 540px){
+    .contentBottom {
+        flex-direction: column;
+        gap: 10px;
+    } 
 }
