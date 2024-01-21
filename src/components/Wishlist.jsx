@@ -7,16 +7,16 @@ import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 
 const Wishlist = () => {
-  const [wishlist, setWishlist] = useState([]);
+  // const [wishlist, setWishlist] = useState([]);
   const [loading, setLoading] = useState(false);
   const classes = useStyles();
 
   useEffect(() => {
-    if (!loading) {
-      getWishlist();
-    }
-    setLoading(true);
-  }, []);
+    if(!loading){
+      getWishlist()
+    };
+    setLoading(true)
+  },[]);
 
   const getWishlist = () => {
     setLoading(true);

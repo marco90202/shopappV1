@@ -25,9 +25,11 @@ const DetailsModal = ({
   };
   const getFecha = () => {
     let date = new Date(productDetail.releaseDate * 1000);
-
-    return date.getDay() + "/" + date.getMonth() + "/" + date.getFullYear();
-  };
+    let year = date.getFullYear();
+    let month = date.getMonth() + 1;
+    let day = date.getDate(); 
+    return day+"/"+month+"/"+year;
+  }
 
   const getModalStyle = () => {
     return {
