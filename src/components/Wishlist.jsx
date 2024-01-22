@@ -89,15 +89,26 @@ const Wishlist = () => {
   };
 
   const addToCart = (product) => {
-    setShopCart({ ...shopCart, cart: [...shopCart.cart, { product }] });
+    const payload = {
+      user_id: user_id,
+      product_id: product.id,
+    };
+    axiosClient
+      .post("/carts", payload)
+      .then(({ data }) => {
+       console.log("save into carts: ",data);
+      })
+      .catch((err) => {
+        const response = err.response;
+        if (response && response.status === 422) {
+          console.log(response.data.errors);
+        }
+      });
+    setShopCart({ ...shopCart, cart: [...shopCart.cart,  product ] });
+
   };
 
   const addCart = (product) => {
-    // let cartProduct = {
-    //   title: product.title,
-    //   price: product.salePrice === 0 ? product.normalPrice : product.salePrice,
-    // };
-    // addToCart(cartProduct);
     addToCart(product);
   };
   return (

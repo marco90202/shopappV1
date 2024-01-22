@@ -15,6 +15,7 @@ const ShoppingCart = ({
   toggleOpen,
   toggleClose,
 }) => {
+  localStorage.setItem("suma",(Math.round(suma * 100) / 100).toString());
 
   const classes = useStyles();
 
