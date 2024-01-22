@@ -141,6 +141,52 @@ const useStyles = makeStyles((theme) => ({
     // backgroundImage:
     //   "url(https://cdn.cloudflare.steamstatic.com/steam/apps/2070000/capsule_sm_120.jpg?t=1704865963)",
   },
+
+  contentAccount: {
+    backgroundColor: "#151d27",
+  },
+
+  listNav: {
+    width: "100%",
+    minWidth: "178px",
+    height: "160px",
+    padding: "10px 0",
+    borderRadius: "5px",
+    backgroundColor: "#263241",
+    color: "#fff",
+    fontSize: "14px",
+    fontFamily: "Open Sans, sans-serif",
+ },
+
+  listUl: {
+    margin: "0px",
+    padding: "0px",
+   listStyle: "none",
+   height: "140px",
+},
+
+  listLi: {
+    height: "60px",
+    
+  },
+   
+  'listLi:hover': {
+    backgroundColor: "#09c",
+  },
+
+  listText: {
+    width: "100%",
+    height: "100%",
+    
+    lineHeight: "18px",
+    textDecoration: "none",
+    color: "#bbb",
+    
+    
+
+   
+},
+
 }));
 
 export default useStyles;

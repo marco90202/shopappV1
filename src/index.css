@@ -256,6 +256,8 @@ table > tbody > tr > td {
   }
 }
 
+/*Estilos Card Wishlist*/
+
 .contentCard {
   background-color: #3f51b1;
   border-radius: 4px;
@@ -381,3 +383,18 @@ table > tbody > tr > td {
   width: 40px;
   height: 26px;
 }
+
+
+/*  Estilos Account */
+
+.listLi {
+    height: 70px;
+    font-size: 30px;
+}
+
+
+
+
+   
+
+
