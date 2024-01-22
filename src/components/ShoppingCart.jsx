@@ -49,7 +49,7 @@ console.log("shopcart in shopping cart: ",shopCart);
                 </p>
                 <Button
                   className={classes.butElim}
-                  onClick={() => restarTotal(row.title)}
+                  onClick={() => restarTotal(row.title,row.id)}
                   variant="contained"
                   size="small"
                   color="secondary"

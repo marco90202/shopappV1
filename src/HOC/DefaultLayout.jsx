@@ -91,20 +91,33 @@ export default function DefaultLayout() {
     setSuma(total);
   };
 
-  const restarTotal = (name) => {
+  const restarTotal = (name,id) => {
     let newCart = {
       cart: shopCart?.cart?.filter((row) => row.title !== name),
     };
+    deleteSingleCart(id);
     setShopCart(newCart);
     sumTotal(newCart);
+  };
+
+  const deleteSingleCart = (product_id) => {
+    let response = shopCart.cart.find((value) => value.id === product_id);
+    axiosClient
+      .delete(`/carts/${response.id}`)
+      .then(({ data }) => {
+      })
+      .catch((err) => {
+        const response = err.response;
+        if (response && response.status === 422) {
+          console.log(response.data.errors);
+        }
+      });
   };
 
   const deleteCart = () => {
     axiosClient
       .delete(`/carts/${user_id}`)
       .then(({ data }) => {
-        console.log("data delete: ",data);
-        // getWishlist();
       })
       .catch((err) => {
         const response = err.response;
