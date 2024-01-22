@@ -19,14 +19,8 @@ import useStyles from "../styles";
 
 const ProductList = ({ user_id, shopCart, addToCart }) => {
   const classes = useStyles();
-  const { wishlisted, setWishlisted } = useStateContext();
-  const object = {
-    data: null,
-    loader: true,
-    error: null,
-    cart: [],
-  };
-  const [scope, setScope] = useState(object);
+  const { wishlisted, setWishlisted, scope } = useStateContext();
+  const[loading1, setLoading1] = useState(true);
   const [productDetail, setProductDetailt] = useState();
   const [wishlist, setWishlist] = useState(null);
   const [open, setOpen] = useState(false);
@@ -37,32 +31,18 @@ const ProductList = ({ user_id, shopCart, addToCart }) => {
   const handleClose = () => {
     setOpen(false);
   };
-  useEffect(() => {
-    if (scope.data && wishlist) isWishListed();
-    if (!scope.loader) return;
 
-    getProducts();
-    getWishlist();
+  useEffect(() => {
+    if( loading1){
+         getWishlist();
+    }
+    if( wishlist){
+        isWishListed();
+    }
+    setLoading1(false);
+
   }, [scope, wishlist]);
 
-  const getProducts = () => {
-    axiosClient
-      .get("/products")
-      .then(({ data }) => {
-        setScope({
-          ...scope,
-          data: data.data,
-          loader: false,
-        });
-      })
-      .catch(() => {
-        setScope({
-          ...scope,
-          loader: false,
-          error: "Error en respuesta",
-        });
-      });
-  };
 
   const getWishlist = () => {
     axiosClient
@@ -76,11 +56,12 @@ const ProductList = ({ user_id, shopCart, addToCart }) => {
   };
 
   const isWishListed = () => {
-    const leftJoinResult = scope.data.map((item1) => ({
+    const leftJoinResult = scope?.data?.map((item1) => ({
       ...item1,
-      ...wishlist.find((item2) => item2.product_id === item1.id),
+      ...wishlist?.find((item2) => item2.product_id === item1.id),
     }));
     setWishlisted(leftJoinResult);
+
   };
 
   const getDetails = (product) => {
@@ -89,11 +70,12 @@ const ProductList = ({ user_id, shopCart, addToCart }) => {
   };
 
   const addCart = (product) => {
-    let cartProduct = {
-      title: product.title,
-      price: product.salePrice === 0 ? product.normalPrice : product.salePrice,
-    };
-    addToCart(cartProduct);
+    // let cartProduct = {
+    //   title: product.title,
+    //   price: product.salePrice === 0 ? product.normalPrice : product.salePrice,
+    // };
+    // addToCart(cartProduct);
+    addToCart(product);
   };
 
   const addWishList = (user_id, product_id) => {
@@ -155,7 +137,7 @@ const ProductList = ({ user_id, shopCart, addToCart }) => {
         </div>
         <Container className={classes.contentBody} maxWidth="md">
           <Grid container spacing={4}>
-            {wishlisted.length > 0 && scope.data !== null ? (
+            {wishlisted?.length > 0 && scope.data !== null ? (
               scope.data.map((row, index) => (
                 <Grid item key={index} xs={12} sm={6} md={3}>
                   <Card className={classes.card}>

@@ -93,11 +93,12 @@ const Wishlist = () => {
   };
 
   const addCart = (product) => {
-    let cartProduct = {
-      title: product.title,
-      price: product.salePrice === 0 ? product.normalPrice : product.salePrice,
-    };
-    addToCart(cartProduct);
+    // let cartProduct = {
+    //   title: product.title,
+    //   price: product.salePrice === 0 ? product.normalPrice : product.salePrice,
+    // };
+    // addToCart(cartProduct);
+    addToCart(product);
   };
   return (
     <>

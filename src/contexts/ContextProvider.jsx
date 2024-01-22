@@ -1,5 +1,7 @@
 import { createContext, useContext, useState } from "react";
 
+
+
 const StateContext = createContext({
   user: null,
   token: null,
@@ -11,12 +13,26 @@ const StateContext = createContext({
   setSuma: () => {},
   wishlisted: [],
   setWishlisted: () => {},
+  scope: {
+    data: null,
+    loader: true,
+    error: null,
+    cart: [],
+  },
+  setScope: () => {}
 });
 
 export const ContextProvider = ({ children }) => {
   const data = {
     cart: [],
   };
+  const object = {
+    data: null,
+    loader: true,
+    error: null,
+    cart: [],
+  };
+  const [scope, setScope] = useState(object);
   const [shopCart, setShopCart] = useState(data);
   const [wishlisted, setWishlisted] = useState([]);
   const [suma, setSuma] = useState(0);
@@ -44,6 +60,8 @@ export const ContextProvider = ({ children }) => {
         setSuma,
         wishlisted,
         setWishlisted,
+        scope,
+        setScope
       }}
     >
       {children}
