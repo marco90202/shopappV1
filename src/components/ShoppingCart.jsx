@@ -19,7 +19,7 @@ const ShoppingCart = ({
 
   const classes = useStyles();
 
-console.log("shopcart in shopping cart: ",shopCart);
+// console.log("shopcart in shopping cart: ",shopCart);
 
   return (
     <Fragment>

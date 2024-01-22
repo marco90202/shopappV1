@@ -77,7 +77,7 @@ const Checkout = () => {
           axiosClient
             .post("/sales", payload)
             .then(({ data }) => {
-              console.log("response: ",data);
+            //   console.log("response: ",data);
             })
             .catch((err) => {
               const response = err.response;
