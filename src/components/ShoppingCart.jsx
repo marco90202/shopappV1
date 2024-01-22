@@ -1,6 +1,8 @@
 import React, { Fragment } from "react";
+import { Link } from "react-router-dom";
 import { Typography } from "@material-ui/core";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import useStyles from "../styles";
 import Button from "@material-ui/core/Button";
 
@@ -13,7 +15,10 @@ const ShoppingCart = ({
   toggleOpen,
   toggleClose,
 }) => {
+
   const classes = useStyles();
+
+console.log("shopcart in shopping cart: ",shopCart);
 
   return (
     <Fragment>
@@ -40,11 +45,11 @@ const ShoppingCart = ({
             shopCart.cart.map((row, index) => (
               <div className={classes.li} key={index}>
                 <p className={classes.p}>
-                  {row.product.title + " - $ " + row.product.price}{" "}
+                  {row.title + " - $ " + row.salePrice}{" "}
                 </p>
                 <Button
                   className={classes.butElim}
-                  onClick={() => restarTotal(row.product.title)}
+                  onClick={() => restarTotal(row.title,row.id)}
                   variant="contained"
                   size="small"
                   color="secondary"
@@ -59,9 +64,22 @@ const ShoppingCart = ({
           )}
         </ul>
         {shopCart.cart.length !== 0 ? (
-          <Typography className={classes.progress} variant="h5">
-            Total $ {Math.round(suma * 100) / 100}{" "}
-          </Typography>
+          <div style={{display:"flex", flexDirection:"column", alignItems:"center"}}>
+            <Typography className={classes.progress} variant="h5">
+              Total $ {Math.round(suma * 100) / 100}{" "}
+            </Typography>
+            <Link to="/checkout">
+              <Button
+                onClick={toggleClose}
+                className={classes.butElim}
+                variant="contained"
+                size="small"
+                color="secondary"
+              >
+                <ShoppingCartIcon />Finalizar Compra
+              </Button>
+            </Link>
+          </div>
         ) : null}
       </SwipeableDrawer>
     </Fragment>

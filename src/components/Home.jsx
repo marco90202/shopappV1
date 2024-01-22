@@ -6,7 +6,7 @@ const Home = () => {
   const { shopCart, setShopCart } = useStateContext();
 
   const addToCart = (product) => {
-    setShopCart({ ...shopCart, cart: [...shopCart.cart, { product }] });
+    setShopCart({ ...shopCart, cart: [...shopCart.cart,  product ] });
   };
   let storedUser = localStorage.getItem("user_id");
   return (

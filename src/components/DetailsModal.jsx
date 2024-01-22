@@ -5,6 +5,7 @@ import useStyles from "../styles";
 import Button from "@material-ui/core/Button";
 import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import axiosClient from "../utils/axios-client";
 
 const DetailsModal = ({
   open,
@@ -14,7 +15,7 @@ const DetailsModal = ({
   addCart,
 }) => {
   const classes = useStyles();
-
+  const user_id= parseInt(localStorage.getItem("user_id"));
   const [modalConfirm, setModalConfirm] = useState(false);
   const handleOpenConfirm = () => {
     setModalConfirm(true);
@@ -38,18 +39,37 @@ const DetailsModal = ({
       transform: `translate(-50%, -50%)`,
     };
   };
-
+  // console.log("productDetail: ",productDetail)
   const addingConfirm = (productDetail) => {
+    storeCart(user_id,productDetail.id);
     addCart(productDetail);
     handleOpenConfirm();
   };
 
   const disableButton = (name) => {
     let flag = false;
-    shopCart.cart.filter((e) => e.product.title === name).length > 0
+    shopCart.cart.filter((e) => e.title === name).length > 0
       ? (flag = true)
       : (flag = false);
     return flag;
+  };
+
+  const storeCart = (user_id, product_id) => {
+    const payload = {
+      user_id: user_id,
+      product_id: product_id,
+    };
+    axiosClient
+      .post("/carts", payload)
+      .then(({ data }) => {
+      //  console.log("save carts: ",data);
+      })
+      .catch((err) => {
+        const response = err.response;
+        if (response && response.status === 422) {
+          console.log(response.data.errors);
+        }
+      });
   };
 
   return (
