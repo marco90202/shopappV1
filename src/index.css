@@ -365,11 +365,84 @@ table > tbody > tr > td {
 
 /*  Estilos Account */
 
-.listLi {
-    height: 70px;
-    font-size: 30px;
+  #contentAccount {
+
+  }
+  @media(min-width: 768px){
+    #contentAccount{
+      display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 30px;
+    }
+  }
+ 
+  .contentAside {
+margin-bottom: 28px;
+  }
+  @media(min-width: 768px){
+    .contentAside{
+      
+     width: 200px;
+    }
+  }
+
+ .storeRow {
+  display: grid;
+    margin: 0 -10px;
+    padding: 0 5px;
+    grid-template-columns: repeat(4, 1fr);
 }
 
+ @media (min-width: 545px) {
+    .storeRow {
+      margin: 0 -20px;
+      padding: 0 10px;
+      grid-template-columns: repeat(12, 1fr);
+   }
+} 
+
+
+#storeRow {
+ 
+}
+@media(min-width: 768px){
+  #storeRow {
+    width: 500px;
+    margin: 0;
+    padding: 0 15px;
+  }
+}
+
+.storeColumn {
+    max-width: 100%;
+    grid-column: span 4;
+    padding: 0 5px;
+}
+ @media(min-width: 545px){
+    .storeColumn {
+      
+      grid-column: span 6;
+      padding: 0 10px;
+        
+    }
+
+} 
+.storeButton {
+  width: 100%;
+  height: 50px;
+  font-size: 17px;
+  font-weight: 700;
+  border-radius: 5px;
+  background-color: rgb(63 81 181);
+  color: #fff;
+}
+
+
+#nombre {
+    margin-top: 8px;
+    border-radius: 5px;
+    font-size: 16px;
+}
 
 
 

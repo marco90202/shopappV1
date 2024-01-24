@@ -118,9 +118,8 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "space-evenly",
     alignItems: "center",
   },
-  
+
   contentBody: {
-   
     width: "100%",
     color: "#fff",
     padding: "20px",
@@ -144,49 +143,146 @@ const useStyles = makeStyles((theme) => ({
 
   contentAccount: {
     backgroundColor: "#151d27",
+    padding: "30px 15px",
   },
 
   listNav: {
     width: "100%",
-    minWidth: "178px",
-    height: "160px",
-    padding: "10px 0",
+    /* minWidth: "178px", */
+    height: "140px",
+    padding: "10px 0px 0px 0px",
     borderRadius: "5px",
     backgroundColor: "#263241",
     color: "#fff",
-    fontSize: "14px",
-    fontFamily: "Open Sans, sans-serif",
- },
+  },
 
   listUl: {
     margin: "0px",
     padding: "0px",
-   listStyle: "none",
-   height: "140px",
-},
+    listStyle: "none",
+  },
 
   listLi: {
-    height: "60px",
-    
-  },
-   
-  'listLi:hover': {
-    backgroundColor: "#09c",
+    fontSize: "14px",
+    fontFamily: "Open Sans, sans-serif",
+    height: "40px",
+    padding: "10px 20px",
+
+    "&:hover": {
+      backgroundColor: "#09c",
+      fontWeight: "700",
+    },
   },
 
   listText: {
-    width: "100%",
-    height: "100%",
-    
+   /*  width: "100%",
+    height: "100%", */
+    fontSize: "16px",
     lineHeight: "18px",
     textDecoration: "none",
     color: "#bbb",
-    
-    
+    "&:hover": {
+      color: "#fff",
+    },
+  },
+  /* Estilos Mi cuenta*/
 
-   
-},
+  storeRow: {
+    display: "grid",
+    gridTemplateColumns: "repeat(1, 1fr)",
+    padding: "0 10px",
+    margin: "0 -10px",
+  },
 
+  storeCol: {
+    maxWidth: "100%",
+    gridColumn: "span 4",
+    padding: "0 5px",
+  },
+  storeTitle: {
+    color: "#fff",
+    fontWeight: "700",
+    marginBottom: "15px",
+    fontSize: "28px",
+  },
+  storeSubtitle: {
+    color: "#fff",
+    marginBottom: "5px",
+    fontWeight: "700",
+    fontSize: "20px",
+  },
+  storeText: {
+    color: "#96a6b7",
+    marginBottom: "15px",
+    fontSize: "14px",
+  },
+  storeLabel: {
+    marginRight: "10px",
+    color: "#fff",
+    fontSize: "17px",
+    fontWeight: "700",
+    lineHeight: "1",
+    paddingBottom: "8px",
+  },
+  storeName: {
+    display: "flex",
+    justifyContent: "space-between",
+    gap: "20px",
+  },
+  inputCheck: {
+    display: "flex",
+    alignItems: "flex-start",
+    marginTop: "15px",
+  },
+  storeCheck: {
+    width: "25px",
+  },
+  sendNewsletter: {
+    color: "#fff",
+  },
+
+ /*  storeButton: {
+    width: "100%",
+    height: "60px",
+    borderRadius: "5px",
+    backgroundColor: "rgb(63 81 181)",
+    color: "#fff",
+    fontSize: "17px",
+    fontWeight: "700",
+  }, */
+
+  /* Estilos cambiar contraseña */
+
+  changeRow: {
+    display: "grid",
+    gridTemplateColumns: "repeat(1, 1fr)",
+    padding: "0 10px",
+    margin: "0 -10px",
+  },
+
+  storeColumn: {
+    maxWidth: "100%",
+    margin: "20px 0 60px 0",
+  },
+
+  contentTitle: {
+    width: "100%",
+    padding: "0 5px",
+  },
+  changeSubtitle: {
+    width: "329px",
+    color: "#fff",
+    fontSize: "28px",
+    fontWeight: "700",
+    marginBottom: "15px",
+  },
+
+  /*Estilos Email */
+
+  emailRow: {
+    display: "grid",
+    width: "100%",
+  },
 }));
 
 export default useStyles;

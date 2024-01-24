@@ -1,4 +1,6 @@
 import React from "react";
+import ChangePassword from "./ChangePassword";
+import ChangeEmail from "./ChangeEmail";
 import { Container, Typography } from "@material-ui/core";
 import useStyles from "../styles";
 
@@ -28,21 +30,21 @@ const Account = () => {
           </Typography>
         </Container>
       </div>
-      <div className={classes.contentAccount}>
-        <aside>
+      <div id="contentAccount" className={classes.contentAccount}>
+        <aside className="contentAside">
           <nav className={classes.listNav}>
             <ul className={classes.listUl}>
-              <li classNme={classes.listLi}>
+              <li className={classes.listLi}>
                 <a className={classes.listText} href="#">
                   Mi Cuenta
                 </a>
               </li>
-              <li classNme={classes.listLi}>
+              <li className={classes.listLi}>
                 <a className={classes.listText} href="#">
                   Cambiar Contraseña
                 </a>
               </li>
-              <li classNme={classes.listLi}>
+              <li className={classes.listLi}>
                 <a className={classes.listText} href="#">
                   Cambiar Email
                 </a>
@@ -50,30 +52,63 @@ const Account = () => {
             </ul>
           </nav>
         </aside>
-        <div>
-          <h1>Mi Cuenta</h1>
-          <h3>Informaciones públicas</h3>
-          <p>Serán mostradas públicamente</p>
-          <form>
-            <fieldset>
-              <label for="nombre">Nombre para mostrar</label>
-              <input
-                type="text"
-                id="nombre"
-                placeholder="Nombre para mostrar"
-              />
-              <h3>Informaciones públicas</h3>
-              <p>Serán mostradas públicamente</p>
-              <label for="nombre">Login</label>
+        <div id="storeRow" className={classes.storeRow}>
+          <div className={classes.storeCol}>
+            <h2 className={classes.storeTitle}>Mi Cuenta</h2>
+            <h3 className={classes.storeSubtitle}>Informaciones públicas</h3>
+            <p className={classes.storeText}>Serán mostradas públicamente</p>
+            <label for="nombre" className={classes.storeLabel}>
+              Nombre para Mostrar
+            </label>
+            <input type="text" id="nombre" placeholder="Nombre para Mostrar" />
+            <form>
+              <h3 className={classes.storeSubtitle}>Informacion personal</h3>
+              <p className={classes.storeText}>Serán mostradas públicamente</p>
+
+              <label for="nombre" className={classes.storeLabel}>
+                Login
+              </label>
               <input type="text" id="nombre" placeholder="Login" />
-              <label for="nombre">Nombre</label>
-              <input type="text" id="nombre" placeholder="Nombre" />
-              <label for="nombre">Apellido</label>
-              <input type="text" id="nombre" placeholder="Apellido" />
-              <label for="nombre">Zona Horaria</label>
+              <div className={classes.storeName}>
+                <div>
+                  <label for="nombre" className={classes.storeLabel}>
+                    Nombre
+                  </label>
+
+                  <input type="text" id="nombre" placeholder="Nombre" />
+                </div>
+                <div>
+                  <label for="nombre" className={classes.storeLabel}>
+                    Apellido
+                  </label>
+                  <input type="text" id="nombre" placeholder="Apellido" />
+                </div>
+              </div>
+              <label for="nombre" className={classes.storeLabel}>
+                Zona Horaria
+              </label>
               <input type="text" id="nombre" placeholder="Zona Horaria" />
-            </fieldset>
-          </form>
+              <div className={classes.inputCheck}>
+                <input
+                  type="checkbox"
+                  id="sendNewsletter"
+                  className={classes.storeCheck}
+                />
+                <label for="sendNewsletter" className={classes.sendNewsletter}>
+                  ¡Deseo recibir ofertas increíbles!
+                </label>
+              </div>
+              <div className="storeRow">
+                <div className="storeColumn">
+                  <button type="submit" className="storeButton">
+                    GUARDAR CAMBIOS
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+          {/* <ChangePassword /> */}
+          {/* <ChangeEmail /> */}
         </div>
       </div>
     </>
