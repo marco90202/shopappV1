@@ -1,6 +1,6 @@
 import React from "react";
-import ChangePassword from "./ChangePassword";
-import ChangeEmail from "./ChangeEmail";
+/* import ChangePassword from "./ChangePassword";
+import ChangeEmail from "./ChangeEmail"; */
 import { Container, Typography } from "@material-ui/core";
 import useStyles from "../styles";
 

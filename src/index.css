@@ -365,9 +365,9 @@ table > tbody > tr > td {
 
 /*  Estilos Account */
 
-  #contentAccount {
+ /*  #contentAccount {
 
-  }
+  } */
   @media(min-width: 768px){
     #contentAccount{
       display: grid;
@@ -402,15 +402,20 @@ margin-bottom: 28px;
 } 
 
 
-#storeRow {
+/* #storeRow {
  
-}
+} */
 @media(min-width: 768px){
   #storeRow {
-    width: 500px;
+    width: 100%;
     margin: 0;
     padding: 0 15px;
   }
+}
+@media(min-width: 845px){
+#storeRow{
+width: 510px;
+}
 }
 
 .storeColumn {

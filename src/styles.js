@@ -175,7 +175,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   listText: {
-   /*  width: "100%",
+    /*  width: "100%",
     height: "100%", */
     fontSize: "16px",
     lineHeight: "18px",
@@ -240,16 +240,6 @@ const useStyles = makeStyles((theme) => ({
   sendNewsletter: {
     color: "#fff",
   },
-
- /*  storeButton: {
-    width: "100%",
-    height: "60px",
-    borderRadius: "5px",
-    backgroundColor: "rgb(63 81 181)",
-    color: "#fff",
-    fontSize: "17px",
-    fontWeight: "700",
-  }, */
 
   /* Estilos cambiar contraseña */
 
