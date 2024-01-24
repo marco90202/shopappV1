@@ -6,7 +6,7 @@ const ChangePassword = () => {
 
   return (
     <div className={classes.changeRow}>
-    {/*   <form>
+      <form>
         <div className={classes.contentTitle}>
           <h2 className={classes.changeSubtitle}>Cambiar Contraseña</h2>
         </div>
@@ -31,7 +31,7 @@ const ChangePassword = () => {
             </button>
           </div>
         </div>
-      </form> */}
+      </form>
     </div>
   );
 };

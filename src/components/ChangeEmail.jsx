@@ -6,7 +6,7 @@ const ChangeEmail = () => {
 
   return (
     <div className={classes.emailRow}>
-    {/*   <form>
+      <form>
         <div>
           <h2 className={classes.changeSubtitle}>Cambiar e-mail</h2>
         </div>
@@ -27,7 +27,7 @@ const ChangeEmail = () => {
             </button>
           </div>
         </div>
-      </form> */}
+      </form>
     </div>
   );
 };
