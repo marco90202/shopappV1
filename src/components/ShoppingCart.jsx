@@ -15,10 +15,11 @@ const ShoppingCart = ({
   toggleOpen,
   toggleClose,
 }) => {
+  localStorage.setItem("suma",(Math.round(suma * 100) / 100).toString());
 
   const classes = useStyles();
 
-console.log("shopcart in shopping cart: ",shopCart);
+// console.log("shopcart in shopping cart: ",shopCart);
 
   return (
     <Fragment>

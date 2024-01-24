@@ -39,7 +39,8 @@ export default function Login() {
     <div className="login-signup-form animated fadeInDown">
       <div className="form">
         <form onSubmit={onSubmit}>
-          <h1 className="title">Accede a tu cuenta</h1>
+          <h1 className="title">STEAM DEALS STORE</h1>
+          <h2 className="title">Accede a tu cuenta</h2>
           {errors && (
             <div className="alert">
               {Object.keys(errors).map((key) => (

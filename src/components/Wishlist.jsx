@@ -89,17 +89,37 @@ const Wishlist = () => {
   };
 
   const addToCart = (product) => {
-    setShopCart({ ...shopCart, cart: [...shopCart.cart, { product }] });
+    const payload = {
+      user_id: user_id,
+      product_id: product.product_id,
+    };
+    axiosClient
+      .post("/carts", payload)
+      .then(({ data }) => {
+        //  console.log("save into carts: ",data);
+      })
+      .catch((err) => {
+        const response = err.response;
+        if (response && response.status === 422) {
+          console.log(response.data.errors);
+        }
+      });
+    // shopCart.cart.map((row) => row.product_id !== product.id && setShopCart({ ...shopCart, cart: [...shopCart.cart,  product ] }))
+    setShopCart({ ...shopCart, cart: [...shopCart.cart, product] });
   };
 
   const addCart = (product) => {
-    // let cartProduct = {
-    //   title: product.title,
-    //   price: product.salePrice === 0 ? product.normalPrice : product.salePrice,
-    // };
-    // addToCart(cartProduct);
     addToCart(product);
   };
+
+  const disableButton = (name) => {
+    let flag = false;
+    shopCart.cart.filter((e) => e.title === name).length > 0
+      ? (flag = true)
+      : (flag = false);
+    return flag;
+  };
+
   return (
     <>
       <div className={classes.container}>
@@ -125,11 +145,18 @@ const Wishlist = () => {
       </div>
       <Container className={classes.cardGrid} maxWidth="md">
         <div className={classes.contentBody}>
-          <Grid container spacing={4} style={{gap:"10px"}}>
+          <Grid container spacing={4} style={{ gap: "10px" }}>
             {wishlisted.map(
               (row, index) =>
                 row.product_id !== undefined && (
-                  <Grid key={index} className="contentCard " item xs={12} sm={12} md={12}>
+                  <Grid
+                    key={index}
+                    className="contentCard "
+                    item
+                    xs={12}
+                    sm={12}
+                    md={12}
+                  >
                     <div className="contentImage">
                       <FavoriteIcon
                         key={index}
@@ -149,7 +176,14 @@ const Wishlist = () => {
                       <Typography align="center" variant="h6">
                         {"Oferta : $" + row.salePrice}
                       </Typography>
-                      <Button variant="contained" size="small" color="primary" onClick={() => addCart(row)} >
+                      <Button
+                        style={{color:"white"}}
+                        variant="contained"
+                        size="small"
+                        color="primary"
+                        disabled={disableButton(row.title)}
+                        onClick={() => addCart(row)}
+                      >
                         Agregar al carrito <ShoppingCartIcon />
                       </Button>
                     </div>

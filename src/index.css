@@ -11,6 +11,11 @@ body,
   min-height: 100vh;
 }
 
+a{
+  text-decoration: none;
+  color:inherit;
+}
+
 h1,
 h2,
 h3,
@@ -263,6 +268,23 @@ table > tbody > tr > td {
     justify-content: space-between;
     align-items: center;
   }
+}
+
+.nlabel {
+  display: block;
+  margin-bottom: 10px;
+}
+.ninput {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+}
+.nbutton {
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
 }
 
 .contentImage {

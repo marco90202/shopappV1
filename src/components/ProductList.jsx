@@ -70,11 +70,6 @@ const ProductList = ({ user_id, shopCart, addToCart }) => {
   };
 
   const addCart = (product) => {
-    // let cartProduct = {
-    //   title: product.title,
-    //   price: product.salePrice === 0 ? product.normalPrice : product.salePrice,
-    // };
-    // addToCart(cartProduct);
     addToCart(product);
   };
 
