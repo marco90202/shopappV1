@@ -10,7 +10,7 @@ const ChangeEmail = () => {
         <div>
           <h2 className={classes.changeSubtitle}>Cambiar e-mail</h2>
         </div>
-        <div style={{width:"65%"}}>
+        <div className={classes.storeChange}>
           <label for="nombre" className={classes.storeLabel}>
             Email
           </label>
@@ -20,9 +20,9 @@ const ChangeEmail = () => {
           </label>
           <input type="email" id="nombre" placeholder="Password" />
         </div>
-        <div className={classes.emailRow}>
-          <div className={classes.storeColumn}>
-            <button type="submit" className={classes.storeButton}>
+        <div className="storeRow">
+          <div className="storeColumn">
+            <button type="submit" className="storeButton">
               GUARDAR CAMBIOS
             </button>
           </div>

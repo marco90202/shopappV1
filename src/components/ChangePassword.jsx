@@ -24,9 +24,9 @@ const ChangePassword = () => {
           </label>
           <input type="text" id="nombre" placeholder="Contraseña actual" />
         </div>
-        <div className={classes.changeRow}>
-          <div className={classes.storeColumn}>
-            <button type="submit" className={classes.storeButton}>
+        <div className="storeRow">
+          <div className="storeColumn">
+            <button type="submit" className="storeButton">
               GUARDAR CAMBIOS
             </button>
           </div>

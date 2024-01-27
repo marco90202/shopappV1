@@ -153,7 +153,7 @@ const useStyles = makeStyles((theme) => ({
     padding: "10px 0px 0px 0px",
     borderRadius: "5px",
     backgroundColor: "#263241",
-    color: "#fff",
+    // color: "#fff",
   },
 
   listUl: {
@@ -171,6 +171,7 @@ const useStyles = makeStyles((theme) => ({
     "&:hover": {
       backgroundColor: "#09c",
       fontWeight: "700",
+      color: "#fff",
     },
   },
 
@@ -211,6 +212,11 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "700",
     fontSize: "20px",
   },
+
+  storeChange: {
+    marginBottom: "25px",
+  },
+  
   storeText: {
     color: "#96a6b7",
     marginBottom: "15px",

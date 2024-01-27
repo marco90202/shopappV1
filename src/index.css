@@ -394,7 +394,7 @@ table > tbody > tr > td {
     #contentAccount{
       display: grid;
     grid-template-columns: 1fr 2fr;
-    column-gap: 30px;
+    /* column-gap: 30px; */
     }
   }
  
@@ -404,7 +404,7 @@ margin-bottom: 28px;
   @media(min-width: 768px){
     .contentAside{
       
-     width: 200px;
+     width: 210px;
     }
   }
 
@@ -436,7 +436,7 @@ margin-bottom: 28px;
 }
 @media(min-width: 845px){
 #storeRow{
-width: 510px;
+width: 100%;
 }
 }
 
